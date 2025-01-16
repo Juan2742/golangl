@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"strconv"
+)
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
@@ -78,16 +82,40 @@ func main() {
 		acir := areaCirculo(rcir2, pi)
 		fmt.Println("Area del circulo: ", acir)*/
 
-	//loops: for, for while, for forever
+	//Loops: for, for while, for forever
 	//for
-	for i := 0; i <= 10; i++ {
-		fmt.Println(i)
-	}
-	fmt.Printf("\n")
+	/*	for i := 0; i <= 10; i++ {
+			fmt.Println(i)
+		}
+		fmt.Printf("\n")*/
 	//for while
-	counter := 0
-	for counter <= 10 {
-		fmt.Println(counter)
-		counter++
+	/*	counter := 0
+		for counter <= 10 {
+			fmt.Println(counter)
+			counter++
+		}*/
+
+	//Condicionales
+	//if y and
+	valor1 := 1
+	valor2 := 2
+	if valor1 == 1 && valor2 == 2 {
+		fmt.Println("Si")
+	} else {
+		fmt.Println("No")
 	}
+	//or
+	valor3 := 3
+	valor4 := 5
+	if valor3 == 3 || valor4 == 4 {
+		fmt.Println("Si")
+	} else {
+		fmt.Println("No")
+	}
+	//Convertir string a Int
+	value, err := strconv.Atoi("23")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("Value: ", value)
 }
