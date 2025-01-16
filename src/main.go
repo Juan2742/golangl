@@ -1,10 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"log"
-	"strconv"
-)
+import "fmt"
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
@@ -96,26 +92,46 @@ func main() {
 		}*/
 
 	//Condicionales
+
 	//if y and
-	valor1 := 1
-	valor2 := 2
-	if valor1 == 1 && valor2 == 2 {
-		fmt.Println("Si")
-	} else {
-		fmt.Println("No")
-	}
+	/*	valor1 := 1
+		valor2 := 2
+		if valor1 == 1 && valor2 == 2 {
+			fmt.Println("Si")
+		} else {
+			fmt.Println("No")
+		}*/
 	//or
-	valor3 := 3
-	valor4 := 5
-	if valor3 == 3 || valor4 == 4 {
-		fmt.Println("Si")
-	} else {
-		fmt.Println("No")
-	}
+	/*	valor3 := 3
+		valor4 := 5
+		if valor3 == 3 || valor4 == 4 {
+			fmt.Println("Si")
+		} else {
+			fmt.Println("No")
+		}*/
 	//Convertir string a Int
-	value, err := strconv.Atoi("23")
-	if err != nil {
-		log.Fatal(err)
+	/*	value, err := strconv.Atoi("23")
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println("Value: ", value)*/
+
+	//switch
+	switch modulo := 5 % 2; modulo {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
 	}
-	fmt.Println("Value: ", value)
+	//Sin condicion
+	value := 60
+	switch {
+	case value < 0:
+		fmt.Println("Es menor que 0")
+	case value > 100:
+		fmt.Println("Es mayor que 100")
+	default:
+		fmt.Println("No hay condicion")
+	}
+
 }
