@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
 // Reto2: Areas en funciones
@@ -117,21 +115,40 @@ func main() {
 		fmt.Println("Value: ", value)*/
 
 	//switch
-	switch modulo := 5 % 2; modulo {
-	case 0:
-		fmt.Println("Es par")
-	default:
-		fmt.Println("Es impar")
-	}
+	/*	switch modulo := 5 % 2; modulo {
+		case 0:
+			fmt.Println("Es par")
+		default:
+			fmt.Println("Es impar")
+		}*/
 	//Sin condicion
-	value := 60
-	switch {
-	case value < 0:
-		fmt.Println("Es menor que 0")
-	case value > 100:
-		fmt.Println("Es mayor que 100")
-	default:
-		fmt.Println("No hay condicion")
-	}
+	/*	value := 60
+		switch {
+		case value < 0:
+			fmt.Println("Es menor que 0")
+		case value > 100:
+			fmt.Println("Es mayor que 100")
+		default:
+			fmt.Println("No hay condicion")
+		}*/
 
+	//Uso de defer, continue y break
+	//defer
+	/*	for i := 0; i <= 5; i++ {
+		defer fmt.Println(i)
+	}*/
+	//Continue
+	/*	i := 0
+		for i = 0; i <= 9; i++ {
+			fmt.Println(i)
+			if i == 2 {
+				fmt.Println("Hay un 2")
+				continue
+			}*/
+	//Break
+	/*		if i == 3 {
+				fmt.Println("Break")
+				break
+			}
+		}*/
 }
