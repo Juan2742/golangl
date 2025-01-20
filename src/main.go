@@ -19,6 +19,20 @@ package main
 	return acir
 }*/
 
+// Palindromo
+/*func isPalindromo(text string) {
+	var textReverse string
+
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		fmt.Println("Es un palindromo")
+	} else {
+		fmt.Println("No es un palindromo")
+	}
+}*/
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
 	//r
@@ -90,7 +104,6 @@ func main() {
 		}*/
 
 	//Condicionales
-
 	//if y and
 	/*	valor1 := 1
 		valor2 := 2
@@ -151,4 +164,35 @@ func main() {
 				break
 			}
 		}*/
+
+	//Arrays y Slices
+	//Arrays
+	/*	var ar [4]int
+		ar[0] = 1
+		ar[1] = 2
+		fmt.Println(ar, len(ar), cap(ar))*/
+	//Slices
+	/*	sl := []int{0, 1, 2, 3, 4, 5, 6}
+		fmt.Println(sl, len(sl), cap(sl))*/
+	//Metodos de slice
+	/*	fmt.Println(sl[0])
+		fmt.Println(sl[:3])
+		fmt.Println(sl[2:4])
+		fmt.Println(sl[4:])*/
+	//Append
+	/*	sl = append(sl, 7)
+		fmt.Println(sl)
+		newsl := []int{8, 9, 10}
+		sl = append(sl, newsl...)
+		fmt.Println(sl)*/
+
+	//Range
+	/*	slst := []string{"hola", "que", "hace"}
+		for i, valor := range slst {
+			fmt.Println(i, valor)
+		}*/
+
+	//Palindromo
+	//	isPalindromo(strings.ToLower("Amor a roma"))
+
 }
