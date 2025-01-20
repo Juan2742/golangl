@@ -33,6 +33,13 @@ package main
 		fmt.Println("No es un palindromo")
 	}
 }*/
+
+// Structs
+/*type car struct {
+	brand string
+	year  int
+}*/
+
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
 	//r
@@ -209,4 +216,11 @@ func main() {
 	/*	value, ok := m["Josep"]
 		fmt.Println(value, ok)*/
 
+	//Structs
+	/*	newcar := car{brand: "Ford", year: 2020}
+		fmt.Println(newcar)*/
+	//otra forma
+	/*	var otherCar car
+		otherCar.brand = "Ferrari"
+		fmt.Println(otherCar)*/
 }
