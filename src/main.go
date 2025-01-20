@@ -195,4 +195,18 @@ func main() {
 	//Palindromo
 	//	isPalindromo(strings.ToLower("Amor a roma"))
 
+	//Maps
+	/*	m := make(map[string]int)
+
+		m["Jose"] = 14
+		m["Pepito"] = 20
+		fmt.Println(m)*/
+	//Recorrer map
+	/*	for i, v := range m {
+		fmt.Println(i, v)
+	}*/
+	//Encontrar el valor
+	/*	value, ok := m["Josep"]
+		fmt.Println(value, ok)*/
+
 }
