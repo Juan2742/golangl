@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+
+	pk "github.com/juan/cursoBackend/src/mypackage"
+)
+
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
 // Reto2: Areas en funciones
@@ -223,4 +229,11 @@ func main() {
 	/*	var otherCar car
 		otherCar.brand = "Ferrari"
 		fmt.Println(otherCar)*/
+
+	//Struct publico: mypackage.go
+	var myCar pk.CarPublic
+	myCar.Brand = "Ferrari"
+	myCar.Year = 1990
+	fmt.Println(myCar)
+	pk.PrintMessage("Master")
 }
