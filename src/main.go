@@ -46,6 +46,20 @@ import (
 	year  int
 }*/
 
+// Struct y Punteros
+/*type pc struct {
+	ram   int
+	disk  int
+	brand string
+}
+
+func (myPC pc) ping() {
+	fmt.Println(myPC.brand, "Pong")
+}
+func (myPC *pc) duplicateRAM() {
+	myPC.ram = myPC.ram * 2
+}*/
+
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
 	//r
@@ -231,9 +245,46 @@ func main() {
 		fmt.Println(otherCar)*/
 
 	//Struct publico: mypackage.go
-	var myCar pk.CarPublic
-	myCar.Brand = "Ferrari"
-	myCar.Year = 1990
-	fmt.Println(myCar)
-	pk.PrintMessage("Master")
+	/*	var myCar pk.CarPublic
+		myCar.Brand = "Ferrari"
+		myCar.Year = 1990
+		fmt.Println(myCar)
+		pk.PrintMessage("Master")*/
+
+	//Struct y Punteros
+	/*	a := 50
+		b := &a
+
+		fmt.Println(b)
+		fmt.Println(*b)
+
+		*b = 100
+		fmt.Println(a)*/
+	//c
+	/*	myPC := pc{ram: 16, disk: 200, brand: "msi"}
+		fmt.Println(myPC)
+
+		myPC.ping()
+
+		fmt.Println(myPC.ram)
+		myPC.duplicateRAM()
+
+		fmt.Println(myPC.ram)
+		myPC.duplicateRAM()
+
+		fmt.Println(myPC.ram)*/
+
+	//Reto 3:
+	myPC := pk.Pc{Ram: 16, Disk: 200, Brand: "msi"}
+	fmt.Println(myPC)
+
+	myPC.Ping()
+
+	fmt.Println(myPC.Ram)
+	myPC.DuplicateRAM()
+
+	fmt.Println(myPC.Ram)
+	myPC.DuplicateRAM()
+
+	fmt.Println(myPC.Ram)
 }
