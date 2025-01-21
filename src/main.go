@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
@@ -58,7 +56,7 @@ func (myPC *pc) duplicateRAM() {
 }*/
 
 // Stringer: Personalizar output
-type pc struct {
+/*type pc struct {
 	ram   int
 	disk  int
 	brand string
@@ -66,8 +64,30 @@ type pc struct {
 
 func (myPC pc) Stringer() string {
 	return fmt.Sprintf("Tengo %d GB de RAM, %d GB Disco, y es una %s", myPC.ram, myPC.disk, myPC.brand)
+}*/
+
+// Interfaces y listas de interfaces
+type figuras2D interface {
+	area() float32
 }
 
+type cuadrado struct {
+	base float32
+}
+type rectangulo struct {
+	base   float32
+	altura float32
+}
+
+func (c cuadrado) area() float32 {
+	return c.base * c.base
+}
+func (r rectangulo) area() float32 {
+	return r.base * r.altura
+}
+func calcular(f figuras2D) {
+	fmt.Println("Area:", f.area())
+}
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
 	//r
@@ -297,6 +317,18 @@ func main() {
 		fmt.Println(myPC.Ram)*/
 
 	//Stringer: Personalizar outputs
-	myPC := pc{ram: 16, disk: 200, brand: "msi"}
-	fmt.Println(myPC.Stringer())
+	/*	myPC := pc{ram: 16, disk: 200, brand: "msi"}
+		fmt.Println(myPC.Stringer())*/
+
+	//Interfaces y Listas de interfases
+	myCuadrado := cuadrado{base: 2}
+	myRectangulo := rectangulo{base: 2, altura: 4}
+
+	calcular(myCuadrado)
+	calcular(myRectangulo)
+
+	//Listas de varios values
+	myInterface := []interface{}{"Hola", 32, 4.90}
+	fmt.Println(myInterface...)
+
 }
