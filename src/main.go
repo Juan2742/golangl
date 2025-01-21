@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-
-	pk "github.com/juan/cursoBackend/src/mypackage"
 )
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
@@ -52,13 +50,23 @@ import (
 	disk  int
 	brand string
 }
-
 func (myPC pc) ping() {
 	fmt.Println(myPC.brand, "Pong")
 }
 func (myPC *pc) duplicateRAM() {
 	myPC.ram = myPC.ram * 2
 }*/
+
+// Stringer: Personalizar output
+type pc struct {
+	ram   int
+	disk  int
+	brand string
+}
+
+func (myPC pc) Stringer() string {
+	return fmt.Sprintf("Tengo %d GB de RAM, %d GB Disco, y es una %s", myPC.ram, myPC.disk, myPC.brand)
+}
 
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
@@ -275,16 +283,20 @@ func main() {
 		fmt.Println(myPC.ram)*/
 
 	//Reto 3:
-	myPC := pk.Pc{Ram: 16, Disk: 200, Brand: "msi"}
-	fmt.Println(myPC)
+	/*	myPC := pk.Pc{Ram: 16, Disk: 200, Brand: "msi"}
+		fmt.Println(myPC)
 
-	myPC.Ping()
+		myPC.Ping()
 
-	fmt.Println(myPC.Ram)
-	myPC.DuplicateRAM()
+		fmt.Println(myPC.Ram)
+		myPC.DuplicateRAM()
 
-	fmt.Println(myPC.Ram)
-	myPC.DuplicateRAM()
+		fmt.Println(myPC.Ram)
+		myPC.DuplicateRAM()
 
-	fmt.Println(myPC.Ram)
+		fmt.Println(myPC.Ram)*/
+
+	//Stringer: Personalizar outputs
+	myPC := pc{ram: 16, disk: 200, brand: "msi"}
+	fmt.Println(myPC.Stringer())
 }
