@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
@@ -67,7 +71,7 @@ func (myPC pc) Stringer() string {
 }*/
 
 // Interfaces y listas de interfaces
-type figuras2D interface {
+/*type figuras2D interface {
 	area() float32
 }
 
@@ -87,7 +91,15 @@ func (r rectangulo) area() float32 {
 }
 func calcular(f figuras2D) {
 	fmt.Println("Area:", f.area())
+}*/
+
+// Gopher
+func say(text string, wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	fmt.Println(text)
 }
+
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
 	//r
@@ -321,14 +333,28 @@ func main() {
 		fmt.Println(myPC.Stringer())*/
 
 	//Interfaces y Listas de interfases
-	myCuadrado := cuadrado{base: 2}
-	myRectangulo := rectangulo{base: 2, altura: 4}
+	/*	myCuadrado := cuadrado{base: 2}
+		myRectangulo := rectangulo{base: 2, altura: 4}
 
-	calcular(myCuadrado)
-	calcular(myRectangulo)
+		calcular(myCuadrado)
+		calcular(myRectangulo)
 
-	//Listas de varios values
-	myInterface := []interface{}{"Hola", 32, 4.90}
-	fmt.Println(myInterface...)
+		//Listas de varios values
+		myInterface := []interface{}{"Hola", 32, 4.90}
+		fmt.Println(myInterface...)*/
 
+	//Gopher
+	var wg sync.WaitGroup
+
+	fmt.Println("Hola")
+
+	wg.Add(1)
+	go say("Mundo", &wg)
+	wg.Wait()
+
+	go func(text string) {
+		fmt.Println(text)
+	}("Adios")
+
+	time.Sleep(time.Second * 1)
 }
