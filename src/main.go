@@ -1,10 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"sync"
-	"time"
-)
+import "fmt"
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
@@ -94,12 +90,17 @@ func calcular(f figuras2D) {
 }*/
 
 // Gopher
-func say(text string, wg *sync.WaitGroup) {
+/*func say(text string, wg *sync.WaitGroup) {
 	defer wg.Done()
 
 	fmt.Println(text)
-}
+}*/
 
+// Channels
+func say(text string, c chan string) {
+	c <- text
+
+}
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
 	//r
@@ -344,17 +345,26 @@ func main() {
 		fmt.Println(myInterface...)*/
 
 	//Gopher
-	var wg sync.WaitGroup
+	/*	var wg sync.WaitGroup
 
-	fmt.Println("Hola")
+		fmt.Println("Hola")
 
-	wg.Add(1)
-	go say("Mundo", &wg)
-	wg.Wait()
+		wg.Add(1)
+		go say("Mundo", &wg)
+		wg.Wait()
 
-	go func(text string) {
-		fmt.Println(text)
-	}("Adios")
+		go func(text string) {
+			fmt.Println(text)
+		}("Adios")
 
-	time.Sleep(time.Second * 1)
+		time.Sleep(time.Second * 1)*/
+
+	//Channnels
+	c := make(chan string, 1)
+
+	fmt.Println("Hello")
+
+	go say("Bye", c)
+	fmt.Println(<-c)
+
 }
