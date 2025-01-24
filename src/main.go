@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
@@ -97,9 +99,14 @@ func calcular(f figuras2D) {
 }*/
 
 // Channels
-func say(text string, c chan string) {
+/*func say(text string, c chan string) {
 	c <- text
 
+}*/
+
+// CH: Range, Close y Select
+func message(text string, c chan string) {
+	c <- text
 }
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
@@ -360,11 +367,37 @@ func main() {
 		time.Sleep(time.Second * 1)*/
 
 	//Channnels
-	c := make(chan string, 1)
+	/*c := make(chan string, 1)
 
 	fmt.Println("Hello")
 
 	go say("Bye", c)
-	fmt.Println(<-c)
+	fmt.Println(<-c)*/
 
+	//Channels: Range, Close,  y select
+	c := make(chan string, 2)
+	c <- "Mensaje1"
+	c <- "Mensaje2"
+	//Close: buena practica
+	close(c)
+
+	fmt.Println(len(c), cap(c))
+	//Range
+	for message := range c {
+		fmt.Println(message)
+	}
+	//Select
+	email1 := make(chan string)
+	email2 := make(chan string)
+
+	go message("mensaje1", email1)
+	go message("mensaje2", email2)
+	for i := 0; i < 2; i++ {
+		select {
+		case m1 := <-email1:
+			fmt.Println("Email recibido desde email1", m1)
+		case m2 := <-email2:
+			fmt.Println("Email recibido desde email2", m2)
+		}
+	}
 }
