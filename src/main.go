@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
 // Reto2: Areas en funciones
@@ -410,9 +408,9 @@ func main() {
 		e.Logger.Fatal(e.Start(":1323"))*/
 
 	//Interactuar, como pedir datos al ususario
-	var response string
-	fmt.Println("Hola, como estas?")
-	fmt.Scanln(&response)
-	fmt.Println("Estas", response)
+	/*	var response string
+		fmt.Println("Hola, como estas?")
+		fmt.Scanln(&response)
+		fmt.Println("Estas", response)*/
 
 }
