@@ -1,10 +1,6 @@
 package main
 
-import (
-	"net/http"
-
-	"github.com/labstack/echo/v4"
-)
+import "fmt"
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
 
@@ -405,11 +401,18 @@ func main() {
 	}*/
 
 	//Framework: Echo
-	e := echo.New()
-	//ruta
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello world")
-	})
+	/*	e := echo.New()
+		//ruta
+		e.GET("/", func(c echo.Context) error {
+			return c.String(http.StatusOK, "Hello world")
+		})
 
-	e.Logger.Fatal(e.Start(":1323"))
+		e.Logger.Fatal(e.Start(":1323"))*/
+
+	//Interactuar, como pedir datos al ususario
+	var response string
+	fmt.Println("Hola, como estas?")
+	fmt.Scanln(&response)
+	fmt.Println("Estas", response)
+
 }
