@@ -1,7 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
+
+	"github.com/labstack/echo/v4"
 )
 
 //Antes tenia otro archivo pero lo perdi, este es uno hecho desde un reto de Platzi
@@ -105,9 +107,10 @@ func calcular(f figuras2D) {
 }*/
 
 // CH: Range, Close y Select
-func message(text string, c chan string) {
+/*func message(text string, c chan string) {
 	c <- text
-}
+}*/
+
 func main() {
 	//Reto1: Areas de Rectangulo, Trapecio y Circulo
 	//r
@@ -375,7 +378,7 @@ func main() {
 	fmt.Println(<-c)*/
 
 	//Channels: Range, Close,  y select
-	c := make(chan string, 2)
+	/*c := make(chan string, 2)
 	c <- "Mensaje1"
 	c <- "Mensaje2"
 	//Close: buena practica
@@ -399,5 +402,14 @@ func main() {
 		case m2 := <-email2:
 			fmt.Println("Email recibido desde email2", m2)
 		}
-	}
+	}*/
+
+	//Framework: Echo
+	e := echo.New()
+	//ruta
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello world")
+	})
+
+	e.Logger.Fatal(e.Start(":1323"))
 }
